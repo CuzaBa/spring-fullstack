@@ -43,6 +43,7 @@ public class DemoApplication {
         String[] beansDefinitionNames = ctx.getBeanDefinitionNames();
         for (String beanName :beansDefinitionNames){
           //  System.out.println(beanName);
+
         }
     }
 
