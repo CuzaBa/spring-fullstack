@@ -1,4 +1,4 @@
-package com.amigoscode.demo.Customer;
+package com.amigoscode.demo;
 
 import com.github.javafaker.Faker;
 import org.springframework.boot.CommandLineRunner;
@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Random;
 
 @SpringBootApplication
-public class DemoApplication {
+public class Main {
 
 
     public static void main(String[] args) {
