@@ -1,13 +1,12 @@
 package com.amigoscode.demo.Customer;
 
 import org.springframework.stereotype.Service;
-
 @Service
 public class FooService {
 
-    public DemoApplication.Foo foo;
+    public Main.Foo foo;
 
-    public FooService(DemoApplication.Foo foo){
+    public FooService(Main.Foo foo){
         this.foo=foo;
         System.out.println("foo = " + foo);
     }
