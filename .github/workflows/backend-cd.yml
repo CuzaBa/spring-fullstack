@@ -17,7 +17,7 @@ jobs:
           POSTGRES_PASSWORD: password
           POSTGRES_DB: amigoscode
         ports:
-          - 5332:5431
+          - 5332:5432
         options:
           --health-cmd pg_isready
           --health-interval 10s
