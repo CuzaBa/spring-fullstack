@@ -11,4 +11,9 @@ public class PingPongController {
     public PingPong getPingPong(){
         return new PingPong("Pong");
     }
+
+    @java.lang.Override
+    public java.lang.String toString() {
+        return "PingPongController{}";
+    }
 }
