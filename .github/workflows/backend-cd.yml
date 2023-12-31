@@ -28,12 +28,10 @@ jobs:
       run:
         working-directory: ./backend
     steps:
-      - name: Send Slack Message
+      - name: Send Slack Message 1
         run: >
-            curl && curl -X POST -H 'Content-type: application/json'
-            --data '
-            {"text":"Deployment started : progress_bar: :fingerscrossed:"}
-            '
+            curl -X POST -H 'Content-type: application/json'
+            --data '{"text":"Deployment started : progress_bar: :fingerscrossed:"}'
             ${{ secrets.SLACK_WEBHOOK_URL }}
       - uses: actions/checkout@v3
       - uses: actions/setup-java@v3
@@ -83,7 +81,7 @@ jobs:
           version_description: ${{ github.SHA }}
           region: ${{ secrets.EB_REGION }}
           deployment_package: backend/Dockerrun.aws.json
-      - name: Send Slack Message
+      - name: Send Slack Message 2
         run: >
           curl && curl -X POST -H 'Content-type: application/json'
           --data '
