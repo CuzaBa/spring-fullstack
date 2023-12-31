@@ -46,7 +46,7 @@ jobs:
         run: echo "BUILD_NUMBER=$(date '+%d.%m.%Y.%H.%M.%S')" >> $GITHUB_OUTPUT
       - name: Send Slack Message
         run: >
-          curl && curl -X POST -H 'Content-type: application/json'
+          curl -X POST -H 'Content-type: application/json'
           --data '
             {"text":"Building with Maven :maven:"}
           '
@@ -62,7 +62,7 @@ jobs:
           cat Dockerrun.aws.json
       - name: Send Slack Message
         run: >
-          - curl && curl -X POST -H 'Content-type: application/json'
+          curl -X POST -H 'Content-type: application/json'
           --data '
           {"text":":aws: Starting deployment to Elastic Beanstalk"}
           '
@@ -80,7 +80,7 @@ jobs:
           deployment_package: backend/Dockerrun.aws.json
       - name: Send Slack Message 2
         run: >
-          curl && curl -X POST -H 'Content-type: application/json'
+          curl -X POST -H 'Content-type: application/json'
           --data '
           {"text":"githubloading: Committing to repo https://github.com/CuzaBa/spring-fullstack"}
           '
@@ -94,7 +94,7 @@ jobs:
           git push https://${{ secrets.EB_GITHUB_TOKEN }}@github.com/CuzaBa/spring-fullstack.git
       - name: Send Slack Message
         run: >
-          curl && curl -X POST -H 'Content-type: application/json'
+          curl -X POST -H 'Content-type: application/json'
           --data '
           {"text":"Deploymen and commit completed :github_check_mark: :party_blob: - http://http://getting-started-app-env.eba-kpqigdik.eu-west-3.elasticbeanstalk.com/" }
           '
@@ -102,7 +102,7 @@ jobs:
       - name: Send Slack Message
         if: always()
         run: >
-            curl && curl -X POST -H 'Content-type: application/json'
+            curl -X POST -H 'Content-type: application/json'
             --data '
             {"text":"Job Status ${{ job.status}}"}
             '
