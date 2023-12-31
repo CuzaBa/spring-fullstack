@@ -52,6 +52,7 @@ jobs:
           '
           ${{ secrets.SLACK_WEBHOOK_URL }}
       - name: Build Package Push with Maven
+        working-directory: ./backend
         run: mvn -ntp -B verify -Ddocker.image.tag=${{steps.build-number.outputs.BUILD_NUMBER}} jib:build
       - name : Update Dockerrun.aws.json api tag with new buid number
         run: |
