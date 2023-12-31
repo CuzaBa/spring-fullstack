@@ -24,9 +24,6 @@ jobs:
           --health-timeout 5s
           --health-retries 5
 
-    defaults:
-      run:
-        working-directory: ./backend
     steps:
       - name: Send Slack Message 1
         run: >
